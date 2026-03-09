@@ -1,0 +1,42 @@
+.shuffle-parent {
+    display: inline-block;
+    white-space: normal;
+    word-wrap: break-word;
+    will-change: transform;
+    line-height: 1.1;
+    font-size: 5rem;
+    /* Made it big as requested */
+    font-family: 'Press Start 2P', cursive;
+    text-transform: uppercase;
+    visibility: hidden;
+    color: var(--col-white);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+}
+
+.shuffle-parent.is-ready {
+    visibility: visible;
+}
+
+.shuffle-char-wrapper {
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: baseline;
+    position: relative;
+}
+
+.shuffle-char-wrapper>span {
+    display: inline-flex;
+    will-change: transform;
+}
+
+.shuffle-char {
+    line-height: 1;
+    display: inline-block;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .shuffle-parent {
+        font-size: 2.5rem;
+    }
+}

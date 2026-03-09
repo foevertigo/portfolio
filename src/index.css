@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap');
+
+/* ── Design Tokens ─────────────────────────────── */
+:root {
+  /* True black palette */
+  --col-bg: #000000;
+  --col-surface: #0a0a0a;
+  --col-surface-2: #111111;
+  --col-border: #1a1a1a;
+  --col-border-hi: #2a2a2a;
+
+  /* Muted, functional accent */
+  --col-accent: #c0c0c0;
+  --col-text: #b0b0b0;
+  --col-text-dim: #555555;
+  --col-white: #e0e0e0;
+  --col-link: #888888;
+  --col-link-hov: #d0d0d0;
+
+  /* Fonts – Cascadia Code for terminal look */
+  --font-body: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+  --font-head: 'Cascadia Code', 'Fira Code', 'Consolas', monospace;
+
+  /* Type scale - HUGE headings and larger body text as requested */
+  --fs-xs: 0.9rem;
+  --fs-sm: 1.1rem;
+  --fs-base: 1.25rem;
+  --fs-md: 1.5rem;
+  --fs-lg: 2rem;
+  --fs-xl: 3rem;
+  --fs-xxl: 5rem;
+
+  /* Consistent radii (2 values only) */
+  --radius-sm: 3px;
+  --radius-md: 6px;
+
+  --z-overlay: 100;
+  --z-modal: 200;
+}
+
+/* ── Reset ──────────────────────────────────── */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  font-weight: 400;
+  background: transparent;
+  /* Changed to let FaultyTerminal show deeply */
+  color: var(--col-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+::selection {
+  background: var(--col-white);
+  color: var(--col-bg);
+}
+
+/* ── Scrollbar ──────────────────────────────── */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--col-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--col-border-hi);
+  border-radius: 2px;
+}
+
+/* ── Keyframes ──────────────────────────────── */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

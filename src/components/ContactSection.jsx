@@ -21,7 +21,7 @@ export default function ContactSection() {
             </div>
             <div className="resume-download-wrapper">
                 <a
-                    href="/resume/resume.pdf"
+                    href="/resume/AleenaResume.pdf"
                     download="Aleena_Burney_Resume.pdf"
                     className="generic-btn primary-btn"
                 >

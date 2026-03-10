@@ -86,3 +86,29 @@
         transform: translate(-50%, 10px);
     }
 }
+
+/* ── Responsive ───────────────────────────── */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: var(--fs-xxl);
+        letter-spacing: 3px;
+        line-height: 1.2;
+    }
+
+    .hero-tagline {
+        font-size: var(--fs-sm);
+        letter-spacing: 1px;
+        padding: 0 20px;
+    }
+
+    .hero-subtitle {
+        font-size: var(--fs-xs);
+        letter-spacing: 2px;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--fs-xl);
+    }
+}

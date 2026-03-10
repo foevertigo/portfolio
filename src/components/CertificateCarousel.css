@@ -222,3 +222,29 @@
         height: 200px;
     }
 }
+
+@media (max-width: 480px) {
+    .carousel-viewport {
+        height: 320px;
+    }
+
+    .carousel-ring {
+        width: 160px;
+        height: 240px;
+    }
+
+    .carousel-card {
+        width: 160px;
+        height: 240px;
+    }
+
+    .carousel-card img,
+    .card-placeholder {
+        height: 150px;
+    }
+
+    .carousel-section h2 {
+        font-size: var(--fs-lg);
+        margin-bottom: 30px;
+    }
+}

@@ -68,3 +68,24 @@
     box-shadow: 0 6px 20px rgba(0, 119, 255, 0.4);
     transform: translateY(-3px);
 }
+
+@media (max-width: 768px) {
+    .contact-section-global {
+        margin: 20px auto 40px;
+        padding: 20px 15px;
+    }
+
+    .contact-global-title {
+        font-size: var(--fs-md);
+    }
+
+    .generic-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    .generic-btn.primary-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+}

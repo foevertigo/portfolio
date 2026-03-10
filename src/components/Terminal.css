@@ -14,6 +14,12 @@
     overflow: hidden;
 }
 
+@media (max-width: 900px) {
+    .terminal-window {
+        width: 95%;
+    }
+}
+
 /* ── Title bar ──────────────────────────────── */
 .terminal-titlebar {
     display: flex;
@@ -486,6 +492,20 @@
 
     .ascii-portrait {
         font-size: 3.5px;
+    }
+
+    .ascii-name-block {
+        font-size: 4px;
+        line-height: 1;
+    }
+
+    .terminal-content {
+        padding: 20px 15px;
+    }
+
+    .section-header {
+        font-size: var(--fs-md);
+        margin-bottom: 16px;
     }
 
     .skills-grid {

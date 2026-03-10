@@ -62,6 +62,18 @@ const Shuffle = ({
         return `top ${startPct}%${sign}`;
     }, [threshold, rootMargin]);
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (ref.current && !playingRef.current) {
+                setReady(false);
+                setTimeout(() => setReady(true), 100);
+            }
+        };
+
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
     useGSAP(
         () => {
             if (!ref.current || !text || !fontsLoaded) return;

@@ -9,6 +9,7 @@
     padding: 20px 0;
     transition: all 0.3s ease;
     background: transparent;
+    box-sizing: border-box;
 }
 
 .navbar.scrolled {
@@ -30,6 +31,8 @@
 .navbar-links {
     display: flex;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .nav-link {
@@ -67,14 +70,21 @@
 
 @media (max-width: 768px) {
     .navbar-links {
-        gap: 12px;
+        gap: 8px;
+        flex-direction: row;
+        /* Keep row but ensure wrapping */
         flex-wrap: wrap;
         justify-content: center;
-        padding: 0 10px;
+        width: 100%;
+        max-width: 320px;
+        /* Force wrap by limiting width */
+        margin: 0 auto;
     }
 
     .nav-link {
         font-size: 0.7rem;
-        letter-spacing: 1px;
+        letter-spacing: 0.5px;
+        white-space: nowrap;
+        padding: 4px 8px;
     }
 }

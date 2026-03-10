@@ -6,7 +6,7 @@
 }
 
 .terminal-window {
-    width: 900px;
+    width: 95%;
     max-width: 800px;
     background: var(--col-bg);
     border: 1px solid var(--col-border);
@@ -67,7 +67,7 @@
     text-align: left;
     /* Left align paragraph text */
     /* Center paragraph text */
-    max-width: 600px;
+    max-width: 100%;
 }
 
 .terminal-name {
@@ -95,6 +95,10 @@
     text-shadow: 0 0 8px rgba(0, 119, 255, 0.4);
     white-space: pre;
     letter-spacing: 0px;
+}
+
+.mobile-name-fallback {
+    display: none;
 }
 
 /* Sparkles around the name */
@@ -495,8 +499,18 @@
     }
 
     .ascii-name-block {
-        font-size: 4px;
-        line-height: 1;
+        display: none;
+    }
+
+    .mobile-name-fallback {
+        display: block;
+        font-family: var(--font-head);
+        font-size: 1.8rem;
+        color: var(--col-accent);
+        text-align: center;
+        margin: 10px 0;
+        text-transform: uppercase;
+        letter-spacing: 2px;
     }
 
     .terminal-content {

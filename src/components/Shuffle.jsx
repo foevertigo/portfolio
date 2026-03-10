@@ -66,7 +66,8 @@ const Shuffle = ({
         const handleResize = () => {
             if (ref.current && !playingRef.current) {
                 setReady(false);
-                setTimeout(() => setReady(true), 100);
+                // 300ms to ensure media queries and layout settled
+                setTimeout(() => setReady(true), 300);
             }
         };
 
@@ -144,7 +145,16 @@ const Shuffle = ({
                     const parent = ch.parentElement;
                     if (!parent) return;
 
-                    const w = ch.getBoundingClientRect().width;
+                    let w;
+                    // On mobile, avoid fixed width to prevent overflow
+                    if (window.innerWidth <= 768) {
+                        gsap.set(ch, { display: 'inline-block', width: 'auto', minWidth: '0.8em', textAlign: 'center' });
+                        // For mobile, we need to measure after setting auto width
+                        w = ch.getBoundingClientRect().width;
+                    } else {
+                        w = ch.getBoundingClientRect().width;
+                        gsap.set(ch, { width: w, display: 'inline-block' });
+                    }
                     const h = ch.getBoundingClientRect().height;
                     if (!w) return;
 
@@ -397,7 +407,8 @@ const Shuffle = ({
                 triggerOnce,
                 respectReducedMotion,
                 triggerOnHover,
-                onShuffleComplete
+                onShuffleComplete,
+                ready
             ],
             scope: ref
         }

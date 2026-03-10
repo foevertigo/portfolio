@@ -12,6 +12,14 @@ export default function CertificateCarousel() {
     const [sway, setSway] = useState(0);
     const [expanded, setExpanded] = useState(null);
     const [imgErrors, setImgErrors] = useState({});
+    const [isMobile, setIsMobile] = useState(false);
+
+    useEffect(() => {
+        const checkMobile = () => setIsMobile(window.matchMedia('(max-width: 768px)').matches);
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const rafRef = useRef(null);
     const swayRef = useRef(0);
@@ -55,6 +63,7 @@ export default function CertificateCarousel() {
 
             <div
                 className="carousel-viewport"
+                style={{ touchAction: 'pan-y pinch-zoom' }}
                 onMouseMove={(e) => {
                     const rect = e.currentTarget.getBoundingClientRect();
                     const center = rect.width / 2;
@@ -70,6 +79,19 @@ export default function CertificateCarousel() {
                 onMouseLeave={() => {
                     speedRef.current = 0;
                 }}
+                onTouchStart={(e) => {
+                    speedRef.current = 0;
+                }}
+                onTouchMove={(e) => {
+                    const rect = e.currentTarget.getBoundingClientRect();
+                    const center = rect.width / 2;
+                    const touchX = e.touches[0].clientX;
+                    const offset = (touchX - rect.left - center) / center;
+                    speedRef.current = offset * 5.0; // Even more sensitive
+                }}
+                onTouchEnd={() => {
+                    speedRef.current = 0;
+                }}
             >
                 <div
                     className="carousel-ring"
@@ -79,8 +101,9 @@ export default function CertificateCarousel() {
                         // Horizontal arc layout (coverflow style)
                         // Cards are spread horizontally and pushed back/rotated towards center
                         const centerOffset = i - (CARD_COUNT - 1) / 2;
-                        const translateX = centerOffset * 220; // 220px horizontal spread
-                        const translateZ = -Math.abs(centerOffset) * 100 + 20; // push outer cards back
+                        const spreadStep = isMobile ? 80 : 220;
+                        const translateX = centerOffset * spreadStep;
+                        const translateZ = -Math.abs(centerOffset) * (isMobile ? 60 : 100) + 20; // push outer cards back
                         const rotateY = centerOffset * -15; // angle towards user
 
                         return (

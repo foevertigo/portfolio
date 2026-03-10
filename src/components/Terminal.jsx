@@ -79,6 +79,7 @@ export default function Terminal() {
 /_/  |_/_/\\___/\\___/_/ /_/\\__,_/  /_____/\\__,_/_/  /_/ /_/\\___/\\__, /  
                                                               /____/   `}
                             </pre>
+                            <div className="mobile-name-fallback">Aleena Burney</div>
 
                             <div className="sparkle-cluster right-cluster">
                                 <span className="ascii-sparkle s4">₊</span>

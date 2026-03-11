@@ -36,10 +36,17 @@ const certificates = [
   },
   {
     id: 6,
-    title: 'New Certification',
-    issuer: 'Unknown',
+    title: 'Security Operations Fundamentals',
+    issuer: 'Palo Alto Networks',
     image: '/images/certs/Screenshot 2026-03-09 234806.png',
-    verifyUrl: null,
+    verifyUrl: 'https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php',
+  },
+  {
+    id: 7,
+    title: 'Cloud Security Automation',
+    issuer: 'Palo Alto Networks',
+    image: '/images/certs/Screenshot 2026-03-11 223459.png',
+    verifyUrl: 'https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php',
   }
 ];
 

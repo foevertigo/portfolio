@@ -112,7 +112,7 @@ export default function CertificateCarousel() {
                                 className="carousel-card"
                                 style={{
                                     transform: `translateX(${translateX}px) translateZ(${translateZ}px) rotateY(${rotateY}deg)`,
-                                    zIndex: CARD_COUNT - Math.abs(centerOffset),
+                                    zIndex: Math.round(CARD_COUNT - Math.abs(centerOffset)),
                                 }}
                                 onClick={() => setExpanded(cert)}
                             >

@@ -47,6 +47,13 @@ const certificates = [
     issuer: 'Palo Alto Networks',
     image: '/images/certs/Screenshot 2026-03-11 223459.png',
     verifyUrl: 'https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php',
+  },
+  {
+    id: 8,
+    title: 'Security Operations Configuration',
+    issuer: 'Palo Alto Networks',
+    image: '/images/certs/Screenshot 2026-03-14 110659.png',
+    verifyUrl: 'https://paloaltonetworksacademy.net/mod/customcert/verify_certificate.php',
   }
 ];
 
